@@ -60,6 +60,11 @@ public class ArbolBalanceado<T extends Comparable<T>>
         return y;
     }
 
+    /**
+     * Inserta un dato dentro del arbol, cuando se encuentre el lugar genera
+     * las rotaciones para balancear el arbol.
+     * @param dato Dato a agregar.
+     */
     public void insertar(T dato)
     {
         this.raiz = insertarRecursivo(this.raiz, dato);
@@ -119,6 +124,11 @@ public class ArbolBalanceado<T extends Comparable<T>>
         return actual;
     }
 
+    /**
+     * Elimina el nodo correspondiente al dato, y genera las rotaciones para balancear el arbol.
+     * @param dato Dato que se compara para eliminar.
+     * @return Dato que se elimino.
+     */
     public T eliminar(T dato)
     {
         T datoEliminado = buscar(dato);
@@ -196,6 +206,11 @@ public class ArbolBalanceado<T extends Comparable<T>>
         return nodo;
     }
 
+    /**
+     * Busca el dato que se le otorga dentro del arbol.
+     * @param dato Dato a comparar.
+     * @return Dato que coincide.
+     */
     public T buscar(T dato) {
         Nodo<T> actual = this.raiz;
 
@@ -211,6 +226,11 @@ public class ArbolBalanceado<T extends Comparable<T>>
         return null;
     }
 
+    /**
+     * Muestra el arbol balanceado en inorden.
+     * izq -> raiz -> der
+     * @return Lista de elementos en orden.
+     */
     public ArrayList<T> mostrarInorden() {
         ArrayList<T> lista = new ArrayList<>();
         mostrarInordenRecursivo(this.raiz, lista);
@@ -226,6 +246,11 @@ public class ArbolBalanceado<T extends Comparable<T>>
         }
     }
 
+    /**
+     * Muestra el arbol balanceado en preorden.
+     * raiz -> izq -> der
+     * @return Lista de elementos en orden.
+     */
     public ArrayList<T> mostrarPreorden() {
         ArrayList<T> lista = new ArrayList<>();
         mostrarPreordenRecursivo(this.raiz, lista);
@@ -240,6 +265,11 @@ public class ArbolBalanceado<T extends Comparable<T>>
         }
     }
 
+    /**
+     * Muestra el arbol balanceado en postorden.
+     * izq -> der -> raiz
+     * @return Lista de elementos en orden.
+     */
     public ArrayList<T> mostrarPostorden() {
         ArrayList<T> lista = new ArrayList<>();
         mostrarPostordenRecursivo(this.raiz, lista);
