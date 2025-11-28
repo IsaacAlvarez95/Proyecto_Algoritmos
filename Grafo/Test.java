@@ -8,7 +8,7 @@ public class Test {
         System.out.println(grafo.showListaDeAdyacencia());
 
         Algoritmos algoritmos = new Algoritmos();
-        System.out.println(algoritmos.dijkstra(grafo.getListaDeAdyacencia(),"CD-Mexicali","CD-Ensenada").toString());
+        System.out.println(algoritmos.dijkstra(grafo.getListaDeAdyacencia(),"CD-Mexicali","Hub-Norte").toString());
         System.out.println(algoritmos.prim(grafo.getListaDeAdyacencia(),"CD-Hermosillo"));
         System.out.println(algoritmos.floydWarshall(grafo.getListaDeAdyacencia()));
     }

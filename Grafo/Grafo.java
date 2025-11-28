@@ -22,10 +22,10 @@ public class Grafo {
      * @param tipo El tipo de arista.
      */
     public void addArista(String origen, String destino,double costo,String tipo) {
-        listaDeAdyacencia.putIfAbsent(origen, new ArrayList<>());
-        listaDeAdyacencia.putIfAbsent(destino, new ArrayList<>());
+        listaDeAdyacencia.putIfAbsent(origen, new ArrayList<>()); //Cuando no se encuentra el vertice, se crea
+        listaDeAdyacencia.putIfAbsent(destino, new ArrayList<>()); //Cada vertice tiene su propia clave en el hashmap
 
-        listaDeAdyacencia.get(origen).add(new Arista(destino,costo,tipo));
+        listaDeAdyacencia.get(origen).add(new Arista(destino,costo,tipo)); //Al vertice de origen se le agrega el arista
     }
 
     /**
@@ -34,7 +34,7 @@ public class Grafo {
      */
     public void addVertice(String nombre) {
         listaDeAdyacencia.putIfAbsent(nombre, new ArrayList<>());
-    }
+    } //Solo se agrega el vertices sin aristas
 
     /**
      * Accede a la lista de adyacencia.
